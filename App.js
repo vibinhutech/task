@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { Button  } from "@react-native-material/core";
+import Splash from './components/Pages/Splash'
 
 const Stack=createNativeStackNavigator()
 
@@ -23,12 +24,25 @@ const Stack=createNativeStackNavigator()
       
   <NavigationContainer>
     <Stack.Navigator>
+
+    
+
+
+
       <Stack.Screen
        name="login"
         component={Login} 
+        options={{headerShown:false}}
        
       
       />
+<Stack.Screen npx react-native run-android
+      name='Splash' 
+      component={Splash}
+      options={{headerShown:false}}
+      >
+
+      </Stack.Screen>
 
       
       <Stack.Screen 
@@ -42,6 +56,8 @@ const Stack=createNativeStackNavigator()
       
       
       />
+
+      
     </Stack.Navigator>
 
   </NavigationContainer>

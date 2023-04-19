@@ -33,7 +33,7 @@ import { Badge, Stack } from "@react-native-material/core";
     const username= data.firstname
     console.warn("data",data)
     if(!data.firstname=="" && !data.lastname=="" && !data.email=="" && !data.password=="" ){
-        props.navigation.navigate("Home", {username:username})
+        props.navigation.navigate("Splash", {username:username})
     }
     else {
         // console.warn("enter all details")
