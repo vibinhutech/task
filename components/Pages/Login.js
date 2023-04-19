@@ -10,9 +10,13 @@ import { Badge, Stack } from "@react-native-material/core";
   const [email,setemail]=useState("")
   const [password,setpassword]=useState("")
 
+  const [focus, setfocus]=useState(false)
+
   const [hidepassowrd, sethidepassword]=useState(true)
 
   const [errorstatus,seterrorstatus]=useState(false)
+
+  const custom= focus?styles.textInput:styles.textInputFocus
 
   const showpasswordhandler=()=> {
     // console.warn("password handler pressed")
@@ -32,7 +36,7 @@ import { Badge, Stack } from "@react-native-material/core";
         props.navigation.navigate("Home", {username:username})
     }
     else {
-        console.warn("enter all details")
+        // console.warn("enter all details")
         seterrorstatus(true)
 
 
@@ -40,9 +44,13 @@ import { Badge, Stack } from "@react-native-material/core";
   }
   return (
     <View style={{margin:35}}>
+      <View>
+        <Image source={require('../../images/left.png')} style={styles.arrowimage}/>
+
+      </View>
       
       <View>
-        <Text style={styles.textContent}>Your Fries 11 </Text>
+        <Text style={styles.textContent}>Your Fries  </Text>
         <Text style={styles.textContent}>deserve better.</Text>
         <Text style={styles.textSub}>Join TomataBasil now. it's free!</Text>
       </View>
@@ -51,11 +59,12 @@ import { Badge, Stack } from "@react-native-material/core";
         <TextInput
          variant="outlined" 
          label="FIRST NAME" 
-         style={{ margin: 16 ,color:"red"}} 
+         style={{margin:16}} 
          value={firstname}
          onChangeText={(text)=>setfirstname(text)}
         //  textContentType='string'
-         inputContainerStyle={{borderColor:"red"}}
+        onFocus={()=>setfocus(true)}
+      
          />
         <TextInput 
         variant="outlined"
@@ -148,7 +157,28 @@ const styles=StyleSheet.create({
     marginTop:10,
     textAlign:"center",
 
-  }
+  }, 
+  arrowimage:{
+    height:40,
+    width:40,
+    marginLeft:8,
+    
+  },
+  // textInput: {
+  //   // backgroundColor:"white",
+  //   borderColor:"black",
+  //   margin: 16,
+  //   underlineColorAndroid:"transparent",
+  //   borderWidth:0.5,
+    
+  // },
+  // textInputFocus:{
+  //   borderColor:"red",
+  //   margin: 16,
+  //   underlineColorAndroid:"transparent",
+  //   borderWidth:0.5,
+  // }
+
 }
 )
 
