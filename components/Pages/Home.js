@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {View, Text, StyleSheet} from "react-native"
 import DrawerNavigator from './DrawerNavigator'
+import { firebase } from '@react-native-firebase/firestore'
 
 export const Home = (props) => {
-  console.warn("home",props.route.params)
+
+
+
+  // console.warn("home",props.route.params)
   // const {username}= props.route.params
 const username=props.route.params
   return (
